@@ -30,6 +30,9 @@ vim.keymap.set("n", "<leader>r", ":%s/") --Replace in entire file
 --Remove shift + enter behavior
 vim.cmd("inoremap <S-Enter> <Enter>")
 
+--Enter command mode easier
+vim.keymap.set("n", ";", ":")
+
 --Sync clipboards
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'

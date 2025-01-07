@@ -37,9 +37,18 @@ return {
       },
       handlers = {
         function(server_name)
-          require("lspconfig")[server_name].setup {
+          local server_config = {
             capabilities = capabilities
           }
+
+          if (server_name == "clangd") then --I don't like it when it auto-includes C files 
+            server_config.init_options = {
+              headerInsertion = false
+            }
+          end
+
+
+          require("lspconfig")[server_name].setup(server_config)
         end,
       }
     })
