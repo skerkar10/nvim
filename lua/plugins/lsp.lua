@@ -41,12 +41,12 @@ return {
             capabilities = capabilities
           }
 
-          if (server_name == "clangd") then --I don't like it when it auto-includes C files 
-            server_config.init_options = {
-              headerInsertion = false
+          if (server_name == "clangd") then
+            server_config.cmd = {
+              "clangd",
+              "--header-insertion=never"
             }
           end
-
 
           require("lspconfig")[server_name].setup(server_config)
         end,
