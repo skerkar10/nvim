@@ -1,7 +1,9 @@
 return {
-  "Mofiqul/dracula.nvim",
+  'sainnhe/sonokai',
 
   config = function()
-    vim.cmd("colorscheme dracula")
+    vim.cmd("let g:sonokai_diagnostic_virtual_text = 'colored'")
+
+    vim.cmd.colorscheme("sonokai")
   end
 }
