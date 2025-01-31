@@ -21,6 +21,9 @@ augroup highlight_yank
 augroup END
 ]])
 
+--Quick terminal commands
+vim.keymap.set("n", "<leader>e", ":wa|:! ")
+
 --Find and replace keymaps
 vim.keymap.set("n", "<leader>s", ":s/") --Replace on line
 vim.keymap.set("n", "<leader>r", ":%s/") --Replace in entire file
