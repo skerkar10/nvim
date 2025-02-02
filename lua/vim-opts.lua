@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.number = true
 vim.opt.guicursor = ""
-vim.opt.showmode = false
+vim.opt.showmode = true
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
@@ -29,8 +29,8 @@ vim.keymap.set("n", "<leader>s", ":s/") --Replace on line
 vim.keymap.set("n", "<leader>r", ":%s/") --Replace in entire file
 
 --Move lines easier
--- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
--- vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 --Remove shift + enter behavior
 vim.cmd("inoremap <S-Enter> <Enter>")

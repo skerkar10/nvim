@@ -1,9 +1,7 @@
 return {
-  'sainnhe/sonokai',
+  "skerkar10/gruber-darker.nvim",
 
   config = function()
-    vim.cmd("let g:sonokai_diagnostic_virtual_text = 'colored'")
-
-    vim.cmd.colorscheme("sonokai")
+    vim.cmd.colorscheme("gruber-darker")
   end
 }
