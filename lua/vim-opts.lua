@@ -29,8 +29,8 @@ vim.keymap.set("n", "<leader>s", ":s/") --Replace on line
 vim.keymap.set("n", "<leader>r", ":%s/") --Replace in entire file
 
 --Move lines easier
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv")
 
 --Remove shift + enter behavior
 vim.cmd("inoremap <S-Enter> <Enter>")
@@ -39,3 +39,6 @@ vim.cmd("inoremap <S-Enter> <Enter>")
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
+
+--Turn off LSP logs by default
+vim.lsp.set_log_level("off")
