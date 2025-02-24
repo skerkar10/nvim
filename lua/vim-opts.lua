@@ -6,7 +6,7 @@ vim.opt.guicursor = ""
 vim.opt.showmode = true
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 vim.cmd("set nohlsearch")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
