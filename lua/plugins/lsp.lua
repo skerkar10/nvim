@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
 
   dependencies = {
-    --LSP Stuff
+    -- LSP Stuff
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     --Autocomplete menu
@@ -66,17 +66,18 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({
-        [''] = cmp.mapping.select_prev_item(cmp_select),
-        -- ['<D-k>'] = cmp.mapping.select_prev_item(cmp_select),
+        -- [''] = cmp.mapping.select_prev_item(cmp_select),
+        ['<D-k>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<D-j>'] = cmp.mapping.select_next_item(cmp_select),
         ['<TAB>'] = cmp.mapping.confirm({ select = true }),
         ["<C-space>"] = cmp.mapping.complete(),
       }),
       sources = cmp.config.sources({
-        { name = 'nvim_lsp', max_item_count = 7, keyword_length = 1 },
-        { name = 'luasnip' },
+        { name = 'nvim_lsp', max_item_count = 7, keyword_length = 1, group_index=1 },
+        { name = 'luasnip', group_index=1 },
+        { name = "copilot", group_index=2 },
       }, {
-          { name = 'buffer' },
+          { name = 'buffer', group_index=1 },
         })
     })
 
