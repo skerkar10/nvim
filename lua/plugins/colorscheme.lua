@@ -29,6 +29,7 @@ return {
   lazy = false,
   config = function()
     require("rose-pine").setup({
+      --Ensures that we don't have undercurls
       highlight_groups = {
         DiagnosticUnderlineError = { underline = true, undercurl = false },
         DiagnosticUnderlineHint = { underline = true, undercurl = false },
