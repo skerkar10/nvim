@@ -28,12 +28,12 @@ return {
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
-        "clangd",
-        "jdtls",
-        "ts_ls",
-        "gopls",
-        "lua_ls",
-        "cssls",
+        "clangd", -- C and C++
+        "jdtls", -- Java
+        "ts_ls", -- Typescript and Javascript
+        "gopls", -- Golang
+        "lua_ls", -- Lua
+        "cssls", -- CSS
       },
       handlers = {
         function(server_name)

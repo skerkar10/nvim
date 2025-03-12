@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.number = true
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 vim.opt.showmode = true
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -32,7 +32,7 @@ vim.keymap.set("n", "<leader>r", ":%s/") --Replace in entire file
 vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv")
 
---Sync clipboards
+--Sync to system register
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
