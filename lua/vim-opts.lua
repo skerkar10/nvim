@@ -40,5 +40,4 @@ end)
 --Turn off LSP logs by default
 -- vim.lsp.set_log_level("off")
 
---Comment out when using alacritty
 vim.keymap.set("i", "<S-CR>", "<CR><Esc>O", {noremap = true, silent=true})
