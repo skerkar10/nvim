@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.number = true
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 vim.opt.showmode = true
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
