@@ -1,0 +1,74 @@
+return {
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "leoluz/nvim-dap-go",
+      "rcarriga/nvim-dap-ui",
+      "theHamsta/nvim-dap-virtual-text",
+      "nvim-neotest/nvim-nio",
+    },
+
+    config = function()
+      local dap = require "dap"
+      local ui = require "dapui"
+
+      require("dapui").setup()
+      require("dap-go").setup()
+      require("nvim-dap-virtual-text").setup()
+
+      -- C/C++
+      dap.adapters.cppdbg = {
+        id = "cppdbg",
+        type = "executable",
+        command = "/Users/sahilkerkar/Downloads/cpptools/extension/debugAdapters/bin/OpenDebugAD7"
+      }
+
+      dap.configurations.cpp = {
+        {
+          name = "Launch file",
+          type = "cppdbg",
+          request = "launch",
+          program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+          end,
+          cwd = "${workspaceFolder}",
+          MIMode = "lldb",
+          stopOnEntry = true,
+          -- args = function()
+          --   local args_string = vim.fn.input('Arguments: ')
+          --   local args = {}
+          --   for arg in string.gmatch(args_string, '[^%s]+') do
+          --     table.insert(args, arg)
+          --   end
+          --
+          --   return args
+          -- end,
+        }
+      }
+
+      dap.configurations.c = dap.configurations.cpp
+
+      vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
+
+      -- Inspect current value
+      vim.keymap.set("n", "<leader>?", function()
+        require("dapui").eval(nil, { enter = true })
+      end)
+
+      vim.keymap.set("n", "<leader>d", dap.continue) -- Start debugger
+
+      dap.listeners.before.attach.dapui_config = function()
+        ui.open()
+      end
+      dap.listeners.before.launch.dapui_config = function()
+        ui.open()
+      end
+      -- dap.listeners.before.event_terminated.dapui_config = function()
+      --   ui.close()
+      -- end
+      -- dap.listeners.before.event_exited.dapui_config = function()
+      --   ui.close()
+      -- end
+    end
+  }
+}
