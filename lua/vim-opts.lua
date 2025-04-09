@@ -41,3 +41,5 @@ end)
 -- vim.lsp.set_log_level("off")
 
 vim.keymap.set("i", "<S-CR>", "<CR><Esc>O", {noremap = true, silent=true})
+
+vim.keymap.set('n', "-", "<CMD>Explore<CR>", {noremap = true, silent = true})

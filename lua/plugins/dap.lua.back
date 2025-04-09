@@ -20,7 +20,7 @@ return {
       dap.adapters.cppdbg = {
         id = "cppdbg",
         type = "executable",
-        command = "/Users/sahilkerkar/Downloads/cpptools/extension/debugAdapters/bin/OpenDebugAD7"
+        command = "/Users/sahilkerkar/Debugging/cpptools/extension/debugAdapters/bin/OpenDebugAD7"
       }
 
       dap.configurations.cpp = {
@@ -32,7 +32,8 @@ return {
             return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
           end,
           cwd = "${workspaceFolder}",
-          MIMode = "lldb",
+          targetArchitecture = "arm64",
+          -- MIMode = "lldb",
           stopOnEntry = true,
           -- args = function()
           --   local args_string = vim.fn.input('Arguments: ')

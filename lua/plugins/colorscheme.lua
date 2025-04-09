@@ -62,6 +62,11 @@ return {
       },
 
       on_highlights = function(highlights, colors)
+        highlights.MatchParen = {
+          fg = "#ff9e64",
+          bold = false
+        }
+
         -- Make defined functions look like built-in ones
         -- highlights.Function = {
         --   fg = "#2ac3de"
