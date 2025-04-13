@@ -19,5 +19,27 @@ return {
     vim.keymap.set("n", "<leader>f", project_files, {})
     vim.keymap.set("n", "<leader>af", builtin.find_files, {})
     vim.keymap.set("n", "<leader>gf", builtin.live_grep, {})
+    vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
   end
 }
+
+-- return {
+--   "ibhagwan/fzf-lua",
+--
+--   dependencies = {
+--     "nvim-tree/nvim-web-devicons"
+--   },
+--
+--   config = function()
+--     local function project_files()
+--       local ok = pcall(require('fzf-lua').git_files)
+--       if not ok then
+--         require('fzf-lua').files()
+--       end
+--     end
+--
+--     vim.keymap.set("n", "<leader>f", project_files, {})
+--     vim.keymap.set("n", "<leader>af", require('fzf-lua').files, {})
+--     vim.keymap.set("n", "<leader>gf", require('fzf-lua').live_grep, {})
+--   end
+-- }

@@ -35,14 +35,14 @@
 --         transparency = false
 --       },
 --
---       variant = "moon",
---       dark_variant = "moon",
---
---       palette = {
---         moon = {
---           base = "#000000",
---         }
---       }
+--       -- variant = "moon",
+--       -- dark_variant = "moon",
+--       --
+--       -- palette = {
+--       --   moon = {
+--       --     base = "#000000",
+--       --   }
+--       -- }
 --
 --     })
 --     vim.cmd("colorscheme rose-pine")

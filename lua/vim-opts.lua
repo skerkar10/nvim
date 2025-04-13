@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.number = true
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 vim.opt.showmode = true
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -42,4 +42,6 @@ end)
 
 vim.keymap.set("i", "<S-CR>", "<CR><Esc>O", {noremap = true, silent=true})
 
+-- Netrw Stuff
 vim.keymap.set('n', "-", "<CMD>Explore<CR>", {noremap = true, silent = true})
+vim.cmd("let g:netrw_list_hide='\\(\\./\\|\\../\\)'")
