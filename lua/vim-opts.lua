@@ -40,7 +40,7 @@ end)
 vim.keymap.set("i", "<S-CR>", "<CR><Esc>O", {noremap = true, silent=true})
 
 -- Netrw Stuff
-vim.keymap.set('n', "<leader>e", "<CMD>Explore<CR>", {noremap = true, silent = true})
+vim.keymap.set('n', "-", "<CMD>Explore<CR>", {noremap = true, silent = true})
 vim.cmd("let g:netrw_list_hide='\\(\\./\\|\\../\\)'")
 
 --Quick Fix Lists
