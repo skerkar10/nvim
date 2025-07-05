@@ -29,7 +29,6 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "clangd", -- C and C++
-        "jdtls", -- Java
         "ts_ls", -- Typescript and Javascript
         "gopls", -- Golang
         "lua_ls", -- Lua
@@ -77,11 +76,11 @@ return {
         ["<C-space>"] = cmp.mapping.complete(),
       }),
       sources = cmp.config.sources({
-        { name = 'nvim_lsp', max_item_count = 7, keyword_length = 1, group_index=1 },
-        { name = 'luasnip', group_index=1 },
-        { name = "copilot", group_index=2 },
+        { name = 'nvim_lsp', max_item_count = 7, keyword_length = 1 },
+        { name = 'luasnip'},
+        { name = "copilot" },
       }, {
-          { name = 'buffer', group_index=1 },
+          { name = 'buffer' },
         })
     })
 

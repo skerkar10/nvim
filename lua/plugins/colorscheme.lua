@@ -1,54 +1,3 @@
--- Sonokai
--- return {
---   "sainnhe/sonokai",
---
---   config = function()
---     vim.cmd("let g:sonokai_diagnostic_virtual_text = 'colored'")
---     vim.cmd("let g:sonokai_style = 'andromeda'")
---     vim.cmd.colorscheme("sonokai")
---   end
--- }
-
---Rose-Pine Black
--- return {
---   "rose-pine/neovim",
---   name = "rose-pine",
---   priority = 1000,
---   lazy = false,
---   config = function()
---     require("rose-pine").setup({
---       -- Ensures that we don't have undercurls
---       highlight_groups = {
---         DiagnosticUnderlineError = { underline = true, undercurl = false },
---         DiagnosticUnderlineHint = { underline = true, undercurl = false },
---         DiagnosticUnderlineInfo = { underline = true, undercurl = false },
---         DiagnosticUnderlineWarn = { underline = true, undercurl = false },
---         SpellBad = { underline = true, undercurl = false },
---         SpellCap = { underline = true, undercurl = false },
---         SpellLocal = { underline = true, undercurl = false },
---         SpellRare = { underline = true, undercurl = false },
---       },
---
---       styles = {
---         bold = false,
---         italic = false,
---         transparency = false
---       },
---
---       variant = "moon",
---       dark_variant = "moon",
---
---       palette = {
---         moon = {
---           base = "#000000",
---         }
---       }
---
---     })
---     vim.cmd("colorscheme rose-pine")
---   end
--- }
-
 return {
   "folke/tokyonight.nvim",
   lazy = false,
@@ -56,32 +5,32 @@ return {
 
   config = function()
     require("tokyonight").setup({
-      style = "night",
+      style = "moon",
       styles = {
-        functions = {}
+        functions = {},
+        comments = { italic = true }
       },
 
-      on_highlights = function(highlights, colors)
+      on_highlights = function(highlights)
         highlights.MatchParen = {
-          fg = "#ff9e64",
+          -- fg = "#ff9e64",
+          fg = "#ff966c",
           bold = false
         }
 
-        -- Make defined functions look like built-in ones
-        -- highlights.Function = {
-        --   fg = "#2ac3de"
-        -- }
         -- Make built-in funtions look like defined ones
         highlights["@function.builtin"] = {
-          fg = "#7aa2f7"
+          -- fg = "#7aa2f7"
+          fg = "#82aaff"
         }
         -- Fix difference in type coloring
         highlights["@type"] = {
-          fg = "#27a1b9"
+          -- fg = "#27a1b9"
+          fg = "#589ed7"
         }
       end
     })
 
-    vim.cmd.colorscheme("tokyonight-night")
+    vim.cmd.colorscheme("tokyonight-moon")
   end
 }
