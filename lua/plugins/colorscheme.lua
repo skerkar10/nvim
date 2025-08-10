@@ -1,36 +1,37 @@
+-- return {
+--   "rose-pine/neovim",
+--   name = "rose-pine",
+--   lazy = false,
+--   priority = 1000,
+--
+--   config = function()
+--     require("rose-pine").setup({
+--       variant = "moon",
+--       palette = {
+--         moon = {
+--           base = "#000000"
+--         }
+--       }
+--
+--     })
+--     vim.cmd.colorscheme('rose-pine-moon')
+--   end
+-- }
+
 return {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
+  "wtfox/jellybeans.nvim",
 
   config = function()
-    require("tokyonight").setup({
-      style = "moon",
-      styles = {
-        functions = {},
-        comments = { italic = true }
-      },
-
-      on_highlights = function(highlights)
-        highlights.MatchParen = {
-          -- fg = "#ff9e64",
-          fg = "#ff966c",
-          bold = false
-        }
-
-        -- Make built-in funtions look like defined ones
-        highlights["@function.builtin"] = {
-          -- fg = "#7aa2f7"
-          fg = "#82aaff"
-        }
-        -- Fix difference in type coloring
-        highlights["@type"] = {
-          -- fg = "#27a1b9"
-          fg = "#589ed7"
-        }
+    local Util = require("jellybeans.util")
+    require("jellybeans").setup({
+      on_colors = function(c)
+        c.background = "#000000"
+      end,
+      on_highlights = function(hl, c)
+        hl.Special = { fg = Util.lighten(c.goldenrod, 0.9) }
+        hl.Type = { fg = Util.blend_bg(c.morning_glory, 0.8) }
       end
     })
-
-    vim.cmd.colorscheme("tokyonight-moon")
+    vim.cmd.colorscheme("jellybeans")
   end
 }

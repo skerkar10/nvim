@@ -69,7 +69,6 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({
-        -- [''] = cmp.mapping.select_prev_item(cmp_select),
         ['<D-k>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<D-j>'] = cmp.mapping.select_next_item(cmp_select),
         ['<TAB>'] = cmp.mapping.confirm({ select = true }),
@@ -77,10 +76,10 @@ return {
       }),
       sources = cmp.config.sources({
         { name = 'nvim_lsp', max_item_count = 7, keyword_length = 1 },
-        { name = 'luasnip'},
+        { name = 'luasnip', max_item_count = 7 },
         { name = "copilot" },
       }, {
-          { name = 'buffer' },
+          { name = 'buffer', max_item_count = 7 },
         })
     })
 
