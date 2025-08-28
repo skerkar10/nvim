@@ -32,8 +32,8 @@ return {
         "ts_ls", -- Typescript and Javascript
         "gopls", -- Golang
         "lua_ls", -- Lua
-        "elixirls", -- Elixer
         "cssls", -- CSS
+        "tinymist", -- Typst
       },
       handlers = {
         function(server_name)
@@ -45,6 +45,13 @@ return {
             server_config.cmd = {
               "clangd",
               "--header-insertion=never"
+            }
+          elseif (server_name == "tinymist") then
+            server_config.settings = {
+              tinymist = {
+                formatterMode = "typststyle",
+                  exportPdf = "never"
+              }
             }
           end
 

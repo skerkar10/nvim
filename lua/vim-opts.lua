@@ -39,10 +39,9 @@ end)
 
 vim.keymap.set("i", "<S-CR>", "<CR><Esc>O", {noremap = true, silent=true})
 
--- Netrw Stuff
--- vim.keymap.set('n', "-", "<CMD>Explore<CR>", {noremap = true, silent = true})
--- vim.cmd("let g:netrw_list_hide='\\(\\./\\|\\../\\)'")
-
 --Quick Fix Lists
 vim.keymap.set("n", "<D-n>", "<CMD>cnext<CR>", {noremap = true})
 vim.keymap.set("n", "<D-S-n>", "<CMD>cprev<CR>", {noremap = true})
+
+-- Delete contents of file
+vim.keymap.set("n", "<leader>d", "<CMD>%d<CR>", {})

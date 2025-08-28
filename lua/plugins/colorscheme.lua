@@ -1,23 +1,3 @@
--- return {
---   "rose-pine/neovim",
---   name = "rose-pine",
---   lazy = false,
---   priority = 1000,
---
---   config = function()
---     require("rose-pine").setup({
---       variant = "moon",
---       palette = {
---         moon = {
---           base = "#000000"
---         }
---       }
---
---     })
---     vim.cmd.colorscheme('rose-pine-moon')
---   end
--- }
-
 return {
   "wtfox/jellybeans.nvim",
 
