@@ -13,4 +13,3 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-opts") --General configuration
 require("lazy").setup("plugins") --Plugins
-require("terminal") --Floating terminal

@@ -9,9 +9,9 @@ vim.opt.signcolumn = "yes"
 -- vim.opt.cursorline = true
 vim.cmd("set nohlsearch")
 vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
 vim.cmd("autocmd FileType * set formatoptions-=r")
 vim.opt.fillchars:append({ eob = " " })
 vim.cmd([[
@@ -45,3 +45,6 @@ vim.keymap.set("n", "<D-S-n>", "<CMD>cprev<CR>", {noremap = true})
 
 -- Delete contents of file
 vim.keymap.set("n", "<leader>d", "<CMD>%d<CR>", {})
+
+-- Alternate files
+vim.keymap.set("n", "<C-i>", "<CMD>edit #<CR>", {})
