@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.number = true
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 vim.opt.showmode = true
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -48,3 +48,6 @@ vim.keymap.set("n", "<leader>d", "<CMD>%d<CR>", {})
 
 -- Alternate files
 vim.keymap.set("n", "<C-i>", "<CMD>edit #<CR>", {})
+
+-- Copy contents of file to system clipboard
+vim.keymap.set("n", "<leader>e", "<CMD>%y+<CR>", {})
