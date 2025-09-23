@@ -1,6 +1,7 @@
 return {
   "chomosuke/typst-preview.nvim",
-  lazy = false,
+  lazy = true,
+  cmd = "Typst",
   opts = {},
 
   config = function()
