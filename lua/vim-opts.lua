@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.number = true
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 vim.opt.showmode = true
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -43,11 +43,11 @@ vim.keymap.set("i", "<S-CR>", "<CR><Esc>O", {noremap = true, silent=true})
 vim.keymap.set("n", "<D-n>", "<CMD>cnext<CR>", {noremap = true})
 vim.keymap.set("n", "<D-S-n>", "<CMD>cprev<CR>", {noremap = true})
 
--- Delete contents of file
-vim.keymap.set("n", "<leader>d", "<CMD>%d<CR>", {})
-
 -- Alternate files
 vim.keymap.set("n", "<C-i>", "<CMD>edit #<CR>", {})
 
 -- Copy contents of file to system clipboard
 vim.keymap.set("n", "<leader>e", "<CMD>%y+<CR>", {})
+
+-- Quick command
+vim.keymap.set("n", "<leader>t", "<CMD>wa<CR>:! ", {})

@@ -31,7 +31,6 @@ return {
         "clangd", -- C and C++
         "ts_ls", -- Typescript and Javascript
         "gopls", -- Golang
-        "lua_ls", -- Lua
         "cssls", -- CSS
         "tinymist", -- Typst
       },
@@ -99,6 +98,10 @@ return {
         header = "",
         prefix = "",
       },
+      virtual_text = {
+        enable = true
+      },
+      update_in_insert = false,
     })
 
     local ls = require "luasnip"

@@ -16,6 +16,36 @@
 --   end
 -- }
 
+-- return {
+--     "folke/tokyonight.nvim",
+--     lazy = false,
+--     priority = 1000,
+--
+--     config = function()
+--         require("tokyonight").setup({
+--             on_highlights = function(highlights)
+--                 highlights.MatchParen = {
+--                     -- fg = "#ff9e64",
+--                     fg = "#ff966c",
+--                     bold = false
+--                 }
+--
+--                 highlights["@function.builtin"] = {
+--                     -- fg = "#7aa2f7"
+--                     fg = "#82aaff"
+--                 }
+--
+--                 highlights["@type"] = {
+--                     -- fg = "#27a1b9"
+--                     fg = "#589ed7"
+--                 }
+--             end
+--         })
+--
+--         vim.cmd.colorscheme("tokyonight")
+--     end
+-- }
+
 return {
   "catppuccin/nvim",
   name = "catppuccin",
@@ -33,7 +63,6 @@ return {
           ['@function.builtin'] = { link = "Function" },
           ['@keyword.import.c'] = { link = "PreProc" },
           ['@keyword.import.cpp'] = { link = "PreProc" },
-          -- Macro = { fg = colors.blue },
           ['@constant.builtin'] = { link = "Type" },
           MatchParen = { fg = colors.peach, bg = "NONE" }
         }
