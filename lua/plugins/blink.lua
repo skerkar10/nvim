@@ -24,6 +24,15 @@ return {
                 },
             },
         },
+        signature = {
+            enabled = true,
+            trigger = {
+                enabled = false
+            },
+            window = {
+                show_documentation = false
+            }
+        },
         keymap = {
             preset = "default",
 
@@ -32,6 +41,7 @@ return {
             ["<TAB>"] = { 'accept', 'fallback' },
             ["<C-k>"] = { 'snippet_backward', 'fallback' },
             ["<C-j>"] = { 'snippet_forward', 'fallback' },
+            ["<D-i>"] = { 'show_signature', "hide_signature", "fallback" }
         }
     }
 }

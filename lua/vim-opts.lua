@@ -23,7 +23,7 @@ augroup END
 
 --Find and replace keymaps
 vim.keymap.set("n", "<leader>s", ":s/") --Replace on line
-vim.keymap.set("n", "<leader>r", ":%s/") --Replace in entire file
+vim.keymap.set("n", "<leader>S", ":%s/") --Replace in entire file
 
 --Move lines easier
 vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv")
@@ -51,3 +51,6 @@ vim.keymap.set("n", "<leader>e", "<CMD>%y+<CR>", {})
 
 -- Quick command
 vim.keymap.set("n", "<leader>t", "<CMD>wa<CR>:! ", {})
+
+-- Run previous build command
+vim.keymap.set("n", "<leader>r", "<CMD>wa<CR><CMD>! !<CR>")
