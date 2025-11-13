@@ -19,5 +19,6 @@ return {
     vim.keymap.set("n", "<leader>f", project_files, {})
     vim.keymap.set("n", "<leader>af", builtin.find_files, {})
     vim.keymap.set("n", "<leader>gf", builtin.live_grep, {})
+    vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
   end
 }

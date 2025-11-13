@@ -2,10 +2,12 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.number = true
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
+-- vim.cmd("set guicursor=n-v-c-i:block")
 vim.opt.showmode = true
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
+vim.opt.wrap = false
 -- vim.opt.cursorline = true
 vim.cmd("set nohlsearch")
 vim.cmd("set expandtab")
@@ -13,6 +15,7 @@ vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("autocmd FileType * set formatoptions-=r")
+vim.cmd("autocmd FileType * setlocal tabstop=4 softtabstop=4 shiftwidth=4")
 vim.opt.fillchars:append({ eob = " " })
 vim.cmd([[
 augroup highlight_yank
@@ -54,3 +57,6 @@ vim.keymap.set("n", "<leader>t", "<CMD>wa<CR>:! ", {})
 
 -- Run previous build command
 vim.keymap.set("n", "<leader>r", "<CMD>wa<CR><CMD>! !<CR>")
+
+vim.api.nvim_set_hl(0, 'SnippetTabstop', {})
+vim.api.nvim_set_hl(0, 'SnippetTabstopActive', {})
