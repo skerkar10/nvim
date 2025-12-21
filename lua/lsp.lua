@@ -2,7 +2,8 @@ vim.lsp.enable({
     "clangd",
     "gopls",
     "typescript-language-server",
-    "tinymist"
+    "tinymist",
+    "jdtls"
 })
 
 vim.diagnostic.config({
