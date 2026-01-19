@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.number = true
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 vim.opt.showmode = false
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -42,10 +42,10 @@ end)
 vim.keymap.set("i", "<S-CR>", "<CR><Esc>O", {noremap = true, silent=true})
 
 --Quick Fix Lists
-vim.keymap.set("n", "<D-n>", function()
+vim.keymap.set("n", "<C-n>", function()
     vim.diagnostic.goto_next({float=false})
 end)
-vim.keymap.set("n", "<D-S-n>", function()
+vim.keymap.set("n", "<C-S-n>", function()
     vim.diagnostic.goto_prev({float=false})
 end)
 

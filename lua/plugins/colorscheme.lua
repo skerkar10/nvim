@@ -1,17 +1,4 @@
 -- return {
---     "sainnhe/gruvbox-material",
---     lazy = false,
---     priority = 1000,
---
---     config = function()
---         vim.cmd("let g:gruvbox_material_diagnostic_virtual_text = 'colored'")
---         vim.cmd("let g:gruvbox_material_diagnostic_virtual_text = 'highlighted'")
---         vim.cmd("let g:gruvbox_material_disable_italic_comment = 1")
---         vim.cmd.colorscheme("gruvbox-material")
---     end
--- }
-
--- return {
 --     "EdenEast/nightfox.nvim",
 --     lazy = false,
 --     priority = 1000,
@@ -53,18 +40,20 @@ return {
     config = function()
         require("catppuccin").setup({
             flavour = "mocha",
-            no_italic = true,
-            -- color_overrides = {
-                -- mocha = {
-                --     base = "#141415",
-                --     mantle = "#1c1c24"
-                -- }
-            -- },
+            default_integrations = false,
+            styles = {
+                conditionals = {},
+            },
             lsp_styles = {
                 virtual_text = {
                     errors = { "bold" },
                     warnings = { "bold" }
                 }
+            },
+            integrations = {
+                blink_cmp = true,
+                telescope = true,
+                gitsigns = true,
             },
             custom_highlights = function(colors)
                 return {
@@ -74,11 +63,11 @@ return {
                     ['@keyword.import.cpp'] = { link = "PreProc" },
                     ['@constant.builtin'] = { link = "Type" },
                     MatchParen = { fg = colors.peach, bg = "NONE", style = {} },
-                    Visual = { style = {} }
+                    Visual = { style = {} },
+                    DiagnosticUnnecessary = {}
                 }
             end
         })
         vim.cmd.colorscheme("catppuccin-mocha")
-        -- vim.cmd(":hi statusline guibg=NONE")
     end
 }

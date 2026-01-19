@@ -3,7 +3,7 @@ vim.lsp.enable({
     "gopls",
     "typescript-language-server",
     "tinymist",
-    "jdtls"
+    "basedpyright"
 })
 
 vim.diagnostic.config({
