@@ -31,43 +31,64 @@
 --     end
 -- }
 
+-- return {
+--     "catppuccin/nvim",
+--     name = "catppuccin",
+--     lazy = false;
+--     priority = 1000,
+--
+--     config = function()
+--         require("catppuccin").setup({
+--             flavour = "mocha",
+--             color_overrides = {
+--                 all = {
+--                     base = "#191C26"
+--                 }
+--             },
+--             default_integrations = false,
+--             styles = {
+--                 -- conditionals = { "bold" },
+--                 conditionals = {},
+--                 -- keywords = { "bold" },
+--                 -- loops = { "bold" },
+--             },
+--             lsp_styles = {
+--                 virtual_text = {
+--                     errors = { "bold" },
+--                     warnings = { "bold" }
+--                 }
+--             },
+--             integrations = {
+--                 blink_cmp = true,
+--                 telescope = true,
+--                 gitsigns = true,
+--             },
+--             custom_highlights = function(colors)
+--                 return {
+--                     ['@type.builtin'] = { link = "Type" },
+--                     ['@function.builtin'] = { link = "Function" },
+--                     ['@keyword.import.c'] = { link = "PreProc" },
+--                     ['@keyword.import.cpp'] = { link = "PreProc" },
+--                     ['@constant.builtin'] = { link = "Type" },
+--                     MatchParen = { fg = colors.peach, bg = "NONE", style = {} },
+--                     Visual = { style = {} },
+--                     DiagnosticUnnecessary = {}
+--                 }
+--             end
+--         })
+--         vim.cmd.colorscheme("catppuccin-mocha")
+--     end
+-- }
+
+
 return {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    lazy = false;
+    "sainnhe/everforest",
+    lazy = false,
     priority = 1000,
 
     config = function()
-        require("catppuccin").setup({
-            flavour = "mocha",
-            default_integrations = false,
-            styles = {
-                conditionals = {},
-            },
-            lsp_styles = {
-                virtual_text = {
-                    errors = { "bold" },
-                    warnings = { "bold" }
-                }
-            },
-            integrations = {
-                blink_cmp = true,
-                telescope = true,
-                gitsigns = true,
-            },
-            custom_highlights = function(colors)
-                return {
-                    ['@type.builtin'] = { link = "Type" },
-                    ['@function.builtin'] = { link = "Function" },
-                    ['@keyword.import.c'] = { link = "PreProc" },
-                    ['@keyword.import.cpp'] = { link = "PreProc" },
-                    ['@constant.builtin'] = { link = "Type" },
-                    MatchParen = { fg = colors.peach, bg = "NONE", style = {} },
-                    Visual = { style = {} },
-                    DiagnosticUnnecessary = {}
-                }
-            end
-        })
-        vim.cmd.colorscheme("catppuccin-mocha")
+        vim.cmd("let g:everforest_background = 'hard'")
+        vim.cmd("let g:everforest_diagnostic_virtual_text = 'colored'")
+        vim.cmd.colorscheme("everforest")
     end
 }

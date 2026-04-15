@@ -2,11 +2,12 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.number = true
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 vim.opt.showmode = false
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
-vim.opt.wrap = false
+vim.opt.wrap = true
+vim.opt.fixeol = true
 -- vim.opt.cursorline = true
 vim.cmd("set nohlsearch")
 vim.cmd("set expandtab")
@@ -58,12 +59,6 @@ vim.keymap.set("n", "<C-i>", "<CMD>edit #<CR>", {})
 -- Copy contents of file to system clipboard
 vim.keymap.set("n", "<leader>e", "<CMD>%y+<CR>", {})
 
--- Quick command
-vim.keymap.set("n", "<leader>t", "<CMD>wa<CR>:! ", {})
-
--- Run previous build command
-vim.keymap.set("n", "<leader>r", "<CMD>wa<CR><CMD>! !<CR>")
-
 vim.keymap.set("n", "<leader>d", function()
     vim.diagnostic.open_float(nil, {focus=false})
 end)
@@ -72,3 +67,15 @@ vim.api.nvim_set_hl(0, 'SnippetTabstop', {})
 vim.api.nvim_set_hl(0, 'SnippetTabstopActive', {})
 
 vim.deprecate = function() end
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*" },
+  callback = function()
+    local save_cursor = vim.fn.getpos(".")
+    pcall(function()
+      vim.cmd [[%s/\s\+$//e]]
+    end)
+    vim.fn.setpos(".", save_cursor)
+  end,
+  desc = "Trim trailing whitespaces on save"
+})
