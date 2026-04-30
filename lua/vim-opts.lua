@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.number = true
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 vim.opt.showmode = false
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -53,8 +53,15 @@ end)
 -- Close Split
 vim.keymap.set("n", "<leader>wd", "<CMD>close<CR>", {})
 
+-- Split screen
+vim.keymap.set("n", "<leader>v", "<CMD>vsplit<CR>", {})
+
 -- Alternate files
 vim.keymap.set("n", "<C-i>", "<CMD>edit #<CR>", {})
+
+-- Scroll Better
+vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
+vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
 
 -- Copy contents of file to system clipboard
 vim.keymap.set("n", "<leader>e", "<CMD>%y+<CR>", {})

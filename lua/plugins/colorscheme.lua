@@ -1,37 +1,4 @@
 -- return {
---     "EdenEast/nightfox.nvim",
---     lazy = false,
---     priority = 1000,
---
---     config = function()
---         require("nightfox").setup({
---             groups = {
---                 duskfox = {
---                     BlinkCmpLabelMatch = {style = "bold"},
---                     MatchParen = { style = "" },
---                     ["@function.builtin"] = { link = "Function" },
---                     ["@keyword"] = { link = "@keyword.return" },
---                     ["@keyword.function"] = { link = "@keyword.return" },
---                     ["@keyword.operator"] = { link = "@keyword.import" },
---                     ["@keyword.storage"] = { link = "@keyword.return" },
---                     ["@keyword.repeat"] = { link = "@keyword.return" },
---                     ["@keyword.exception"] = { link = "@keyword.return" },
---                     ["@keyword.conditional"] = { link = "@keyword.return" },
---                     ["@keyword.conditional.ternary"] = { link = "@keyword.return" },
---                     ["@type.builtin"] = { link = "@type" },
---                     ["@string.escape"] = { link = "@keyword.import" },
---                     ["@markup.strong"] = { fg = "#e0def4", style = "bold" },
---                     ["@property"] = { link = "@tag" },
---                     Title = { fg = "#f6c177", style = "bold" }
---                 },
---             },
---         })
---
---         vim.cmd.colorscheme("duskfox")
---     end
--- }
-
--- return {
 --     "catppuccin/nvim",
 --     name = "catppuccin",
 --     lazy = false;
@@ -82,13 +49,38 @@
 
 
 return {
-    "sainnhe/everforest",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
 
     config = function()
-        vim.cmd("let g:everforest_background = 'hard'")
-        vim.cmd("let g:everforest_diagnostic_virtual_text = 'colored'")
-        vim.cmd.colorscheme("everforest")
+        require("tokyonight").setup({
+            style = "night",
+            styles = {
+                functions = {},
+            },
+
+            on_highlights = function(highlights, colors)
+                highlights.MatchParen = {
+                    fg = "#ff9e64",
+                    bold = false
+                }
+
+                -- Make built-in funtions look like defined ones
+                highlights["@function.builtin"] = {
+                    fg = "#7aa2f7"
+                }
+                -- Fix difference in type coloring
+                highlights["@type"] = {
+                    fg = "#27a1b9"
+                }
+
+                highlights["@keyword"] = {
+                    fg = "#bb9af7"
+                }
+            end
+        })
+
+        vim.cmd.colorscheme("tokyonight-night")
     end
 }
