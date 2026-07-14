@@ -5,6 +5,16 @@ return {
         require("lualine").setup({
             options = {
                 section_separators = "", component_separators = ""
+            },
+            sections = {
+                lualine_a = {
+                    {
+                        "mode",
+                        color = {
+                            gui = "bold"
+                        }
+                    }
+                }
             }
         })
     end

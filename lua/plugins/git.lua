@@ -8,6 +8,8 @@ return {
             vim.keymap.set("n", "<leader>p", "<CMD>Gitsigns preview_hunk<CR>", {})
             vim.keymap.set("n", "<D-;>", "<CMD>Gitsigns next_hunk<CR>", {})
             vim.keymap.set("n", "<D-S-;>", "<CMD>Gitsigns prev_hunk<CR>", {})
+            vim.keymap.set("n", "<F16>", "<CMD>Gitsigns next_hunk<CR>", {})
+            vim.keymap.set("n", "<F17>", "<CMD>Gitsigns prev_hunk<CR>", {})
             vim.keymap.set("n", "<leader>u", "<CMD>Gitsigns reset_hunk<CR>", {})
         end
     }

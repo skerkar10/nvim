@@ -38,10 +38,13 @@ return {
 
             ["<D-k>"] = { 'select_prev', 'fallback' },
             ["<D-j>"] = { 'select_next', 'fallback' },
+            ["<F14>"] = { 'select_prev' },
+            ["<F13>"] = { 'select_next' },
             ["<TAB>"] = { 'accept', 'fallback' },
             ["<C-k>"] = { 'snippet_backward', 'fallback' },
             ["<C-j>"] = { 'snippet_forward', 'fallback' },
-            ["<D-i>"] = { 'show_signature', "hide_signature", "fallback" }
+            ["<D-i>"] = { 'show_signature', "hide_signature", "fallback" },
+            ["<F15>"] = { 'show_signature', "hide_signature" }
         }
     }
 }

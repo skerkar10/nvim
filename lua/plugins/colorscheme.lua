@@ -65,6 +65,7 @@ return {
                     fg = "#ff9e64",
                     bold = false
                 }
+                highlights.Visual.bold = true
 
                 -- Make built-in funtions look like defined ones
                 highlights["@function.builtin"] = {
