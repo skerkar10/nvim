@@ -8,14 +8,18 @@ vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
 vim.opt.fixeol = true
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
 vim.cmd("set nohlsearch")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
+-- vim.cmd("set tabstop=2")
+-- vim.cmd("set softtabstop=2")
+-- vim.cmd("set shiftwidth=2")
 vim.cmd("autocmd FileType * set formatoptions-=r")
 vim.cmd("autocmd FileType * setlocal tabstop=4 softtabstop=4 shiftwidth=4")
+-- vim.cmd("autocmd FileType * setlocal tabstop=2 softtabstop=2 shiftwidth=2")
 vim.opt.fillchars:append({ eob = " " })
 vim.cmd([[
 augroup highlight_yank
