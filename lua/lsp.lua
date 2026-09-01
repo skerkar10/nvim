@@ -3,6 +3,7 @@ vim.lsp.enable({
     "gopls",
     "typescript-language-server",
     "tinymist",
+    "roslyn-language-server"
 })
 
 vim.diagnostic.config({

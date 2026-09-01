@@ -1,14 +1,15 @@
 --Settings
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
+vim.opt.termguicolors = true
 vim.o.number = true
 vim.opt.showmode = false
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
 vim.opt.fixeol = true
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 vim.cmd("set nohlsearch")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
@@ -69,6 +70,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
 
 -- Copy contents of file to system clipboard
 vim.keymap.set("n", "<leader>e", "<CMD>%y+<CR>", {})
+
+-- Save file
+vim.keymap.set({"n", "i", "v"}, "<D-l>", "<CMD>wall<CR>", {})
 
 vim.keymap.set("n", "<leader>d", function()
     vim.diagnostic.open_float(nil, {focus=false})
