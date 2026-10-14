@@ -1,7 +1,7 @@
 --Settings
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 vim.opt.termguicolors = true
 vim.o.number = true
 vim.opt.showmode = false
@@ -60,6 +60,14 @@ vim.keymap.set("n", "<leader>wd", "<CMD>close<CR>", {})
 
 -- Split screen
 vim.keymap.set("n", "<leader>v", "<CMD>vsplit<CR>", {})
+
+-- Persistent terminal
+vim.keymap.set("n", "<leader>r", function()
+    require("terminal").toggle()
+end, { desc = "Toggle terminal" })
+
+
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- Alternate files
 vim.keymap.set("n", "<C-i>", "<CMD>edit #<CR>", {})
