@@ -14,6 +14,6 @@ end
 
 return {
     cmd = { clangd, "--header-insertion=never", "--completion-style=detailed", "--function-arg-placeholders=false" },
-    filetypes = { "c", "cpp", "h", "hpp" },
+    filetypes = { "c", "cpp", "h", "hpp", "objc", "objcpp" },
     root_markers = { ".clangd", "compile_commands.json", "compile_flags.txt", ".git" },
 }

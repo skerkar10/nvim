@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 vim.opt.guicursor = ""
 vim.opt.termguicolors = true
 vim.o.number = true
-vim.opt.showmode = false
+-- vim.opt.showmode = false
 vim.o.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
@@ -61,20 +61,15 @@ vim.keymap.set("n", "<leader>wd", "<CMD>close<CR>", {})
 -- Split screen
 vim.keymap.set("n", "<leader>v", "<CMD>vsplit<CR>", {})
 
--- Persistent terminal
-vim.keymap.set("n", "<leader>r", function()
-    require("terminal").toggle()
-end, { desc = "Toggle terminal" })
-
-
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- Alternate files
 vim.keymap.set("n", "<C-i>", "<CMD>edit #<CR>", {})
 
--- Scroll Better
+-- Scroll Better (Centered)
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
+vim.keymap.set("n", "<C-o>", "<C-o>zz", {})
 
 -- Copy contents of file to system clipboard
 vim.keymap.set("n", "<leader>e", "<CMD>%y+<CR>", {})
@@ -101,4 +96,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.fn.setpos(".", save_cursor)
   end,
   desc = "Trim trailing whitespaces on save"
+})
+
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+  callback = function()
+    if vim.bo.modified and not vim.bo.readonly and vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
+      vim.cmd("silent! write")
+    end
+  end,
+  desc = "Auto save when leaving insert mode"
 })

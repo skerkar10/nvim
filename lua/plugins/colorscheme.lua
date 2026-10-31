@@ -1,65 +1,88 @@
-return {
-    'sainnhe/gruvbox-material',
-    lazy = false,
-    priority = 1000,
-    config = function()
-        vim.g.gruvbox_material_background = "hard"
-        vim.g.gruvbox_material_foreground = "mix"
-        vim.g.gruvbox_material_float_style = "dim"
-        vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
-
-        vim.cmd.colorscheme('gruvbox-material')
-    end
-}
-
 -- return {
---     "catppuccin/nvim",
---     name = "catppuccin",
+--     'sainnhe/gruvbox-material',
 --     lazy = false,
 --     priority = 1000,
---
 --     config = function()
---         require("catppuccin").setup({
---             flavour = "mocha",
---             -- color_overrides = {
---             --     all = {
---             --         base = "#191C26"
---             --     }
---             -- },
---             default_integrations = false,
---             styles = {
---                 -- conditionals = { "bold" },
---                 conditionals = {},
---                 -- keywords = { "bold" },
---                 -- loops = { "bold" },
---             },
---             lsp_styles = {
---                 virtual_text = {
---                     errors = { "bold" },
---                     warnings = { "bold" }
---                 }
---             },
---             integrations = {
---                 blink_cmp = true,
---                 telescope = true,
---                 gitsigns = true,
---             },
---             custom_highlights = function(colors)
---                 return {
---                     ['@type.builtin'] = { link = "Type" },
---                     ['@function.builtin'] = { link = "Function" },
---                     ['@keyword.import.c'] = { link = "PreProc" },
---                     ['@keyword.import.cpp'] = { link = "PreProc" },
---                     ['@constant.builtin'] = { link = "Type" },
---                     MatchParen = { fg = colors.peach, bg = "NONE", style = {} },
---                     Visual = { style = {} },
---                     DiagnosticUnnecessary = {}
---                 }
---             end
---         })
---         vim.cmd.colorscheme("catppuccin-mocha")
+--         vim.g.gruvbox_material_background = "hard"
+--         vim.g.gruvbox_material_foreground = "mix"
+--         vim.g.gruvbox_material_float_style = "dim"
+--         vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
+--
+--         vim.cmd.colorscheme('gruvbox-material')
+--
+--         local keyword_groups = {
+--             'Statement', 'Keyword', 'Conditional', 'Repeat', 'Exception',
+--             'TSKeyword', 'TSConditional', 'TSRepeat', 'TSException',
+--             'TSKeywordReturn', 'TSKeywordFunction',
+--             '@keyword', '@keyword.conditional', '@keyword.repeat',
+--             '@keyword.return', '@keyword.exception', '@keyword.function', '@keyword.import'
+--         }
+--         for _, group in ipairs(keyword_groups) do
+--             local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+--             hl.bold = true
+--             vim.api.nvim_set_hl(0, group, hl)
+--         end
 --     end
 -- }
+
+-- return {
+--     'ThunderBoltCODMYT/gruber-darker.vim',
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         vim.cmd('colorscheme gruber-darker')
+--         vim.cmd("highlight MatchParen gui=NONE")
+--     end,
+-- }
+
+return {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false,
+    priority = 1000,
+
+    config = function()
+        require("catppuccin").setup({
+            flavour = "mocha",
+            -- color_overrides = {
+            --     all = {
+            --         base = "#191C26"
+            --     }
+            -- },
+            default_integrations = false,
+            styles = {
+                -- conditionals = { "bold" },
+                conditionals = {},
+                -- keywords = { "bold" },
+                -- loops = { "bold" },
+            },
+            lsp_styles = {
+                virtual_text = {
+                    errors = { "bold" },
+                    warnings = { "bold" }
+                }
+            },
+            integrations = {
+                blink_cmp = true,
+                telescope = true,
+                gitsigns = true,
+            },
+            custom_highlights = function(colors)
+                return {
+                    ['@type.builtin'] = { link = "Type" },
+                    ['@function.builtin'] = { link = "Function" },
+                    ['@keyword.import.c'] = { link = "PreProc" },
+                    ['@keyword.import.cpp'] = { link = "PreProc" },
+                    ['@constant.builtin'] = { link = "Type" },
+                    MatchParen = { fg = colors.peach, bg = "NONE", style = {} },
+                    Visual = { style = {} },
+                    DiagnosticUnnecessary = {}
+                }
+            end
+        })
+        vim.cmd.colorscheme("catppuccin-mocha")
+    end
+}
 
 
 -- return {
